@@ -26,4 +26,5 @@
                     tags: |
                         ${{ secrets.DOCKER_USERNAME }}/devops-flask:latest
                         ${{ secrets.DOCKER_USERNAME }}/devops-flask:${{ github.sha }}
-                    cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/devops-flask:latest
+                    cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/devops-flask:buildcache
+                    cache-to: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/devops-flask:buildcache,mode=max
