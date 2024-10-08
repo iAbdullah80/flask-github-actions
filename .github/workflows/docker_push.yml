@@ -26,3 +26,4 @@
                     tags: |
                         ${{ secrets.DOCKER_USERNAME }}/devops-flask:latest
                         ${{ secrets.DOCKER_USERNAME }}/devops-flask:${{ github.sha }}
+                    cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/devops-flask:latest
