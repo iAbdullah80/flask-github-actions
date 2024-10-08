@@ -1,0 +1,18 @@
+---
+    name: Run docker container tests from a docker compose
+    on:
+      pull_request:
+        branches:
+          - main
+    
+    jobs:
+        test_with_pytest:
+            runs-on: ubuntu-latest
+            steps:
+                - name: Checkout code
+                  uses: actions/checkout@v2
+                
+                - name: docker compose up
+                  run: |
+                    docker compose run test_app
+                      
